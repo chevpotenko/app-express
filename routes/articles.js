@@ -62,7 +62,7 @@ router.get('/edit/:id', (req, res) => {
 router.post('/edit/:id', (req, res) => {
    let article = {};                                  
    article.title = req.body.title;
-   rticle.author = req.body.author;
+   article.author = req.body.author;
    article.body = req.body.body;
 
     let query = {_id:req.params.id}

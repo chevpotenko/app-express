@@ -1,0 +1,19 @@
+.navbar{
+     margin-bottom: 30px;
+}
+.control{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.get{
+    padding: 15px;
+}
+.get-list{
+    margin: 0;
+    padding: 0;
+}
+.get-list li{
+    width: 18rem;
+    margin: 0 0 20px 0;    
+}

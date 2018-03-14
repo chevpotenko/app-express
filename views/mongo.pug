@@ -1,0 +1,61 @@
+extends layout
+
+block content
+    .container.control       
+        .column.get.bg-secondary
+            h2 Get
+            ul.get-list
+                each val, index in data
+                    li.card
+                        .card-body
+                            p ID: #{val._id}
+                            .card-title= val.title 
+                            .card-subtitle.mb-2.text-muted= val.author 
+                            .card-text= val.body
+        .column.insert
+            h2 Insert
+            form.insert(action='/mongodb' method='POST')
+                .form-group
+                    label Title
+                        br
+                        input(type='text' name='title')
+                .form-group
+                    label Author
+                        br
+                        input(type="text" name='author')
+                .form-group
+                    label Body
+                        br
+                        textarea(name="body", cols="30", rows="5")            
+                .form-group
+                    input.btn.btn-primary(type="submit" value="INSERT")
+        .column.update
+            h2 Update
+            form.insert(action='/mongodb' method='POST')
+                .form-group
+                    label ID
+                        br
+                        input(type='text' name='id')
+                .form-group
+                    label Title
+                        br
+                        input(type='text' name='title')
+                .form-group
+                    label Author
+                        br
+                        input(type="text" name='author')
+                .form-group
+                    label Body
+                        br
+                        textarea(name="body", cols="30", rows="5")            
+                .form-group
+                    input.btn.btn-warning(type="submit" name="_method" value="UPDATE") 
+        .column.delete
+            h2 Delete
+            form.insert(action='/mongodb/delete' method='POST')
+                .form-group
+                    label ID
+                        br
+                        input(type='text' name='id')                           
+                .form-group
+                    input.btn.btn-danger(type="submit" name="_method" value="DELETE") 

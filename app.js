@@ -68,6 +68,8 @@ middlewareOptions = {
 app.use(expressValidator(middlewareOptions));
 
 //ADD ROUTER
+app.use('/mongodb', require('./routes/mongodb'));
+
 app.get('/', (req, res) => {
     Articles.find({}, function(err, articles) {
         if(err){
